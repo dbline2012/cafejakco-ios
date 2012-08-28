@@ -14,7 +14,11 @@
 		4153E70915E3D1D100454564 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153E70815E3D1D100454564 /* main.m */; };
 		4153E70D15E3D1D100454564 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153E70C15E3D1D100454564 /* AppDelegate.m */; };
 		4153E71015E3D1D100454564 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153E70E15E3D1D100454564 /* MainStoryboard.storyboard */; };
-		4153E71315E3D1D100454564 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153E71215E3D1D100454564 /* ViewController.m */; };
+		41A0377015EB6A4600E12388 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A0376F15EB6A4600E12388 /* MainTabBarController.m */; };
+		41A4E0C215EA6A1A00590FB7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A4E0C115EA6A1A00590FB7 /* MainViewController.m */; };
+		41EF4D4B15ECF5AC009433DF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF4D4A15ECF5AC009433DF /* HomeViewController.m */; };
+		41EF4D4F15ECF5B7009433DF /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF4D4E15ECF5B7009433DF /* StoryViewController.m */; };
+		41EF4D5215ECF5C3009433DF /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF4D5115ECF5C3009433DF /* CheckInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +33,16 @@
 		4153E70B15E3D1D100454564 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4153E70C15E3D1D100454564 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4153E70F15E3D1D100454564 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4153E71115E3D1D100454564 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4153E71215E3D1D100454564 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		41A0376E15EB6A4600E12388 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarController.h; path = ../MainTabBarController.h; sourceTree = "<group>"; };
+		41A0376F15EB6A4600E12388 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = ../MainTabBarController.m; sourceTree = "<group>"; };
+		41A4E0C015EA6A1A00590FB7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		41A4E0C115EA6A1A00590FB7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		41EF4D4915ECF5AC009433DF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		41EF4D4A15ECF5AC009433DF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		41EF4D4D15ECF5B7009433DF /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
+		41EF4D4E15ECF5B7009433DF /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
+		41EF4D5015ECF5C3009433DF /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
+		41EF4D5115ECF5C3009433DF /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +92,11 @@
 				4153E70B15E3D1D100454564 /* AppDelegate.h */,
 				4153E70C15E3D1D100454564 /* AppDelegate.m */,
 				4153E70E15E3D1D100454564 /* MainStoryboard.storyboard */,
-				4153E71115E3D1D100454564 /* ViewController.h */,
-				4153E71215E3D1D100454564 /* ViewController.m */,
+				41A4E0C015EA6A1A00590FB7 /* MainViewController.h */,
+				41A4E0C115EA6A1A00590FB7 /* MainViewController.m */,
+				41A0376E15EB6A4600E12388 /* MainTabBarController.h */,
+				41A0376F15EB6A4600E12388 /* MainTabBarController.m */,
+				41EF4D5315ECF5DA009433DF /* Tab */,
 				4153E70315E3D1D100454564 /* Supporting Files */,
 			);
 			path = cafejakco;
@@ -96,6 +111,19 @@
 				4153E70A15E3D1D100454564 /* cafejakco-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41EF4D5315ECF5DA009433DF /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				41EF4D4915ECF5AC009433DF /* HomeViewController.h */,
+				41EF4D4A15ECF5AC009433DF /* HomeViewController.m */,
+				41EF4D4D15ECF5B7009433DF /* StoryViewController.h */,
+				41EF4D4E15ECF5B7009433DF /* StoryViewController.m */,
+				41EF4D5015ECF5C3009433DF /* CheckInViewController.h */,
+				41EF4D5115ECF5C3009433DF /* CheckInViewController.m */,
+			);
+			name = Tab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +191,11 @@
 			files = (
 				4153E70915E3D1D100454564 /* main.m in Sources */,
 				4153E70D15E3D1D100454564 /* AppDelegate.m in Sources */,
-				4153E71315E3D1D100454564 /* ViewController.m in Sources */,
+				41A4E0C215EA6A1A00590FB7 /* MainViewController.m in Sources */,
+				41A0377015EB6A4600E12388 /* MainTabBarController.m in Sources */,
+				41EF4D4B15ECF5AC009433DF /* HomeViewController.m in Sources */,
+				41EF4D4F15ECF5B7009433DF /* StoryViewController.m in Sources */,
+				41EF4D5215ECF5C3009433DF /* CheckInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +311,7 @@
 				4153E71815E3D1D100454564 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
