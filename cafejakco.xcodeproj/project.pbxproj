@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412BA5A516354C8E0036F19B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412BA5A416354C8E0036F19B /* SettingViewController.m */; };
 		4153E6FD15E3D1D100454564 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4153E6FC15E3D1D100454564 /* UIKit.framework */; };
 		4153E6FF15E3D1D100454564 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4153E6FE15E3D1D100454564 /* Foundation.framework */; };
 		4153E70115E3D1D100454564 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4153E70015E3D1D100454564 /* CoreGraphics.framework */; };
@@ -15,13 +16,14 @@
 		4153E70D15E3D1D100454564 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4153E70C15E3D1D100454564 /* AppDelegate.m */; };
 		4153E71015E3D1D100454564 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4153E70E15E3D1D100454564 /* MainStoryboard.storyboard */; };
 		41A0377015EB6A4600E12388 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A0376F15EB6A4600E12388 /* MainTabBarController.m */; };
-		41A4E0C215EA6A1A00590FB7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A4E0C115EA6A1A00590FB7 /* MainViewController.m */; };
 		41EF4D4B15ECF5AC009433DF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF4D4A15ECF5AC009433DF /* HomeViewController.m */; };
 		41EF4D4F15ECF5B7009433DF /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF4D4E15ECF5B7009433DF /* StoryViewController.m */; };
 		41EF4D5215ECF5C3009433DF /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41EF4D5115ECF5C3009433DF /* CheckInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		412BA5A316354C8E0036F19B /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		412BA5A416354C8E0036F19B /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		4153E6F815E3D1D100454564 /* cafejakco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cafejakco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4153E6FC15E3D1D100454564 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4153E6FE15E3D1D100454564 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -35,8 +37,6 @@
 		4153E70F15E3D1D100454564 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		41A0376E15EB6A4600E12388 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarController.h; path = ../MainTabBarController.h; sourceTree = "<group>"; };
 		41A0376F15EB6A4600E12388 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = ../MainTabBarController.m; sourceTree = "<group>"; };
-		41A4E0C015EA6A1A00590FB7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		41A4E0C115EA6A1A00590FB7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		41EF4D4915ECF5AC009433DF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		41EF4D4A15ECF5AC009433DF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		41EF4D4D15ECF5B7009433DF /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
@@ -92,8 +92,6 @@
 				4153E70B15E3D1D100454564 /* AppDelegate.h */,
 				4153E70C15E3D1D100454564 /* AppDelegate.m */,
 				4153E70E15E3D1D100454564 /* MainStoryboard.storyboard */,
-				41A4E0C015EA6A1A00590FB7 /* MainViewController.h */,
-				41A4E0C115EA6A1A00590FB7 /* MainViewController.m */,
 				41A0376E15EB6A4600E12388 /* MainTabBarController.h */,
 				41A0376F15EB6A4600E12388 /* MainTabBarController.m */,
 				41EF4D5315ECF5DA009433DF /* Tab */,
@@ -122,6 +120,8 @@
 				41EF4D4E15ECF5B7009433DF /* StoryViewController.m */,
 				41EF4D5015ECF5C3009433DF /* CheckInViewController.h */,
 				41EF4D5115ECF5C3009433DF /* CheckInViewController.m */,
+				412BA5A316354C8E0036F19B /* SettingViewController.h */,
+				412BA5A416354C8E0036F19B /* SettingViewController.m */,
 			);
 			name = Tab;
 			sourceTree = "<group>";
@@ -191,11 +191,11 @@
 			files = (
 				4153E70915E3D1D100454564 /* main.m in Sources */,
 				4153E70D15E3D1D100454564 /* AppDelegate.m in Sources */,
-				41A4E0C215EA6A1A00590FB7 /* MainViewController.m in Sources */,
 				41A0377015EB6A4600E12388 /* MainTabBarController.m in Sources */,
 				41EF4D4B15ECF5AC009433DF /* HomeViewController.m in Sources */,
 				41EF4D4F15ECF5B7009433DF /* StoryViewController.m in Sources */,
 				41EF4D5215ECF5C3009433DF /* CheckInViewController.m in Sources */,
+				412BA5A516354C8E0036F19B /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

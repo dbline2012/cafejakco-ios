@@ -1,18 +1,18 @@
 //
-//  HomeViewController.m
+//  SettingViewController.m
 //  cafejakco
 //
-//  Created by Byeol Kang on 12. 8. 28..
+//  Created by Byeol Kang on 12. 10. 22..
 //  Copyright (c) 2012년 doubleline. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "SettingViewController.h"
 
-@interface HomeViewController ()
+@interface SettingViewController ()
 
 @end
 
-@implementation HomeViewController
+@implementation SettingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,21 +29,16 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.tabBarController.navigationItem setTitle:@"작은커피집"];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    [self.tabBarController.navigationItem setTitle:@"나의설정"];
 }
 
 @end
