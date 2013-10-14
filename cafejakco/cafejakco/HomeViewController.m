@@ -13,6 +13,7 @@
 
 @interface HomeViewController ()
 
+
 @end
 
 @implementation HomeViewController
@@ -35,25 +36,42 @@
 	// Do any additional setup after loading the view.
     self.noticeTableView.dataSource = self;
     self.noticeTableView.delegate = self;
+    
+    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+    if (iOSDeviceScreenSize.height == 480) {
+        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_home2.png"]]];
+    }
+    else if (iOSDeviceScreenSize.height == 568) {
+        [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_home2-568h.png"]]];
+    }
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_home.png"] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg6.png"]]];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_home.png"] forBarMetrics:UIBarMetricsDefault];
-    
     loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(100.0, 180.0, 120.0, 80.0)];
     [self.view addSubview:loadingView];
+    
     
     HttpAdapter *httpAdapter = [[HttpAdapter alloc] init];
     dispatch_queue_t dQueue = dispatch_queue_create("com.apple.testQueue", NULL);
     dispatch_async(dQueue, ^{
-        NSArray *tempNotices = [httpAdapter GetJsonDataWithUrl:@"http://kcoding.soseek.net/notice/?pno=1"];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            notices = [NSArray arrayWithArray:tempNotices];
-            [self.noticeTableView reloadData];
-            [loadingView removeFromSuperview];
-        });
+        NSArray *tempNotices = [[NSArray alloc] init];
+        @try {
+            tempNotices = [httpAdapter GetJsonDataWithUrl:URL_JAKCO_SERVER_NOTICE];
+        }
+        @catch (NSException * e) {
+            NSLog(@"Error: %@%@", [e name], [e reason]);
+        }
+        @finally {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                notices = [NSArray arrayWithArray:tempNotices];
+                [self.noticeTableView reloadData];
+                [loadingView removeFromSuperview];
+            });
+        }
     });
 
 }
@@ -89,65 +107,33 @@
     }
     // TODO set the text
     cell.titleLabel.text = [currentArticle valueForKey:@"title"];
-    cell.dateLabel.text = [currentArticle valueForKey:@"created"];
+    cell.dateLabel.text = [[[[NSString stringWithFormat:[currentArticle valueForKey:@"created"]] stringByReplacingOccurrencesOfString:@"-" withString:@"/"] componentsSeparatedByString:@" "] objectAtIndex:0];
+    
     
     return cell;
 }
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
     id currentArticle = [notices objectAtIndex:indexPath.row];
     NSString *alertString = [NSString stringWithFormat:@"제목 : %@\n\n%@", [currentArticle valueForKey:@"title"], [currentArticle valueForKey:@"content"]];
     alert = [[UIAlertView alloc] initWithTitle:@"[작커]공지사항" message:alertString delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
     [alert show];
 }
 
+- (IBAction)actionGoWebHome:(id)sender {
+    NSString *strUrl = URL_JAKCO_HOMEPAGE;
+    strUrl = [strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:strUrl];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)actionGoMap:(id)sender {
+    NSString *strUrl = URL_JAKCO_MAP;
+    strUrl = [strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:strUrl];
+    [[UIApplication sharedApplication] openURL:url];
+}
 @end

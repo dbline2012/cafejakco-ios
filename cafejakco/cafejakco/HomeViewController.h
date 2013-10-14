@@ -19,6 +19,8 @@
     LoadingView *loadingView;
 }
 
+- (IBAction)actionGoWebHome:(id)sender;
+- (IBAction)actionGoMap:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *noticeTableView;
 @property (strong, nonatomic) NSArray *notices;
 

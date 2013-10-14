@@ -18,17 +18,19 @@
     NSMutableData *data;
     NSMutableData *receivedData;
     NSString *dataString;
+    BOOL isFinishLoading;
 }
 
 @property (nonatomic, strong) NSString *urlString;
-@property (nonatomic, strong) NSMutableData *receiveData;
+@property (nonatomic, strong) NSMutableData *receivedData;
 @property (nonatomic, strong) NSURLResponse *response;
 
 - (id)initWithUrl:(NSString *)restUrlString;
 
 - (NSMutableArray *)GetJsonDataWithUrl:(NSString *)restUrlString;
 
-- (BOOL)SendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
+- (NSString *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
+- (BOOL)AsyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
 
 - (NSString *)base64EncodingWithLineLength:(unsigned int)lineLength data:(NSData *)imgData;
 

@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface CheckinViewController : UIViewController
+
+
+@interface CheckinViewController : UIViewController <MKMapViewDelegate>
 {
-    
+    MKUserLocation *myLocation;
 }
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
+- (IBAction)actionCheckin:(id)sender;
 
 @end

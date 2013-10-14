@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface WriteArticleViewController : UITableViewController
+
 @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
 @property (strong, nonatomic) IBOutlet UITextView *contentTextView;
 
+- (IBAction)actionBack:(id)sender;
+- (IBAction)actionUpload:(id)sender;
 @end

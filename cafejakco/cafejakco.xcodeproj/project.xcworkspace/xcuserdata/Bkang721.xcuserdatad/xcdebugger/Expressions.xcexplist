@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[HttpAdapter SendPostDataWithUrl:postData:]:HttpAdapter.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[HttpAdapter connection:didReceiveData:]:HttpAdapter.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

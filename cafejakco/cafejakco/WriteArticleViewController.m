@@ -7,6 +7,7 @@
 //
 
 #import "WriteArticleViewController.h"
+#import "HttpAdapter.h"
 
 @interface WriteArticleViewController ()
 
@@ -29,18 +30,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:tap];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_write.png"] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_write.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationItem.backBarButtonItem = [UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:191/255.0 green:20/255.0 blue:81/255.0 alpha:1.0]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,4 +50,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)actionBack:(id)sender {
+    if(self.navigationController.viewControllers.count > 1) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (IBAction)actionUpload:(id)sender {
+    HttpAdapter *httpAdapter = [[HttpAdapter alloc] init];
+    NSDictionary *postDataDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 @"1", @"user_id",
+                                 @"3", @"group_id",
+                                 self.titleTextField.text, @"title",
+                                 self.contentTextView.text, @"content",
+                                 @"null", @"image",
+                                 nil];
+    
+    if ([[httpAdapter SyncSendPostDataWithUrl:URL_JAKCO_SERVER_COMMUNITY_UPLOAD postData:postDataDic] isEqualToString:@"{\"status\": \"create success\"}"]) {
+        NSLog(@"[WriteArticleViewController/actionUpload] upload success");
+        [self actionBack:self];
+    }
+    else
+        NSLog(@"[WriteArticleViewController/actionUpload] upload fail");
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)recognizer
+{
+    NSLog(@"[WriteArticleViewController/handleTap] End editing");
+    [self.view endEditing:YES];
+}
 @end

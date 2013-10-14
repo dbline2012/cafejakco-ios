@@ -40,25 +40,36 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_story.png"] forBarMetrics:UIBarMetricsDefault];
+    
     loadingView = [[LoadingView alloc] init];
     [self.view addSubview:loadingView];
+    
+    page_num = 1;
     HttpAdapter *httpAdapter = [[HttpAdapter alloc] init];
     dispatch_queue_t dQueue = dispatch_queue_create("com.apple.testQueue", NULL);
     dispatch_async(dQueue, ^{
-        
-        NSArray *tempArticles = [httpAdapter GetJsonDataWithUrl:@"http://kcoding.soseek.net/?pno=1"];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            articles = [NSArray arrayWithArray:tempArticles];
-            [self.tableView reloadData];
-            [loadingView removeFromSuperview];
-        });
+        NSArray *tempNotices = [[NSArray alloc] init];
+        @try {
+            tempNotices = [httpAdapter GetJsonDataWithUrl:[NSString stringWithFormat:@"%@?pno=%d", URL_JAKCO_SERVER_COMMUNITY, page_num]];
+        }
+        @catch (NSException * e) {
+            NSLog(@"Error: %@%@", [e name], [e reason]);
+        }
+        @finally {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                articles = [NSArray arrayWithArray:tempNotices];
+                [self.tableView reloadData];
+                [loadingView removeFromSuperview];
+            });
+        }
     });
-    page_num = 1;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,7 +110,7 @@
         Article *currentArticle = [articles objectAtIndex:indexPath.row];
         cell.usernameLabel.text = [currentArticle valueForKey:@"user_name"];
         cell.titleLabel.text = [currentArticle valueForKey:@"title"];
-        cell.dateLabel.text = [currentArticle valueForKey:@"created"];
+        cell.dateLabel.text = [[[[NSString stringWithFormat:[currentArticle valueForKey:@"created"]] stringByReplacingOccurrencesOfString:@"-" withString:@"/"] componentsSeparatedByString:@" "] objectAtIndex:0];
     }
     
     return cell;
@@ -109,7 +120,6 @@
 {
     if ([segue.identifier isEqualToString:@"DetailArticleSeque"]) {
         detailArticleViewController = segue.destinationViewController;
-        
         [detailArticleViewController setArticle:[articles objectAtIndex:self.tableView.indexPathForSelectedRow.row]];
     }
     
@@ -127,13 +137,20 @@
         HttpAdapter *httpAdapter = [[HttpAdapter alloc] init];
         dispatch_queue_t dQueue = dispatch_queue_create("com.apple.testQueue", NULL);
         dispatch_async(dQueue, ^{
-            NSArray *tempArticles = [httpAdapter GetJsonDataWithUrl:[NSString stringWithFormat:@"http://kcoding.soseek.net/?pno=%d", page_num]];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                //articles = [NSArray arrayWithArray:tempArticles];
-                articles = [articles arrayByAddingObjectsFromArray:tempArticles];
-                [self.tableView reloadData];
-                [loadingView removeFromSuperview];
-            });
+            NSArray *tempNotices = [[NSArray alloc] init];
+            @try {
+                tempNotices = [httpAdapter GetJsonDataWithUrl:[NSString stringWithFormat:@"%@?pno=%d", URL_JAKCO_SERVER_COMMUNITY, page_num]];
+            }
+            @catch (NSException * e) {
+                NSLog(@"Error: %@%@", [e name], [e reason]);
+            }
+            @finally {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    articles = [articles arrayByAddingObjectsFromArray:tempNotices];
+                    [self.tableView reloadData];
+                    [loadingView removeFromSuperview];
+                });
+            }
         });
     }
 }

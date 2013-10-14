@@ -52,6 +52,10 @@
 		412BA63E163583B40036F19B /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412BA63D163583B40036F19B /* AddTaskViewController.m */; };
 		412BA6451635BB880036F19B /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BA6441635BB880036F19B /* coffee.png */; };
 		412BA64F1635BD0C0036F19B /* coffee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BA64D1635BD0C0036F19B /* coffee@2x.png */; };
+		412E640F1801BADC000213F4 /* icon_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 412E640B1801BADC000213F4 /* icon_map.png */; };
+		412E64101801BADC000213F4 /* icon_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 412E640C1801BADC000213F4 /* icon_map@2x.png */; };
+		412E64121801BADC000213F4 /* icon_homepage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 412E640E1801BADC000213F4 /* icon_homepage@2x.png */; };
+		412E64141801BB12000213F4 /* icon_homepage.png in Resources */ = {isa = PBXBuildFile; fileRef = 412E64131801BB12000213F4 /* icon_homepage.png */; };
 		4139435B1639753000394C8F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 413943591639753000394C8F /* Default.png */; };
 		4139435C1639753000394C8F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4139435A1639753000394C8F /* Default@2x.png */; };
 		413B2363163D37CF00B03C10 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 413B2362163D37CF00B03C10 /* HomeViewController.m */; };
@@ -87,6 +91,24 @@
 		416F4BD116391C93000C8FB0 /* member@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 416F4BCD16391C93000C8FB0 /* member@2x.png */; };
 		416F4BD216391C93000C8FB0 /* story@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 416F4BCE16391C93000C8FB0 /* story@2x.png */; };
 		41BCF812163D256000F01C43 /* CheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BCF811163D256000F01C43 /* CheckinViewController.m */; };
+		41BD07FD180C29B60021B290 /* JakcoPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BD07FC180C29B60021B290 /* JakcoPin.m */; };
+		41D41C321801A33400111496 /* bg_home-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C301801A33300111496 /* bg_home-568h.png */; };
+		41D41C331801A33400111496 /* bg_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C311801A33400111496 /* bg_home.png */; };
+		41D41C371801B16800111496 /* bg_home2-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C341801B16800111496 /* bg_home2-568h@2x.png */; };
+		41D41C381801B16800111496 /* bg_home2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C351801B16800111496 /* bg_home2.png */; };
+		41D41C391801B16800111496 /* bg_home2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C361801B16800111496 /* bg_home2@2x.png */; };
+		41D41C3C1801B49D00111496 /* bg_helper_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C3A1801B49D00111496 /* bg_helper_3.png */; };
+		41D41C3D1801B49D00111496 /* bg_helper_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C3B1801B49D00111496 /* bg_helper_3@2x.png */; };
+		41D41C411801B76F00111496 /* bg_helper_3-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C401801B76F00111496 /* bg_helper_3-568h@2x.png */; };
+		41D52F68180C1F0E00C738A7 /* check_in.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D52F66180C1F0E00C738A7 /* check_in.png */; };
+		41D52F69180C1F0E00C738A7 /* check_in@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D52F67180C1F0E00C738A7 /* check_in@2x.png */; };
+		41D52F6B180C1FA700C738A7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D52F6A180C1FA700C738A7 /* MapKit.framework */; };
+		41D6F3E718091F66001C9351 /* login_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6F3E318091F66001C9351 /* login_icon.png */; };
+		41D6F3E818091F66001C9351 /* login_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6F3E418091F66001C9351 /* login_icon@2x.png */; };
+		41D6F3E918091F66001C9351 /* logout_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6F3E518091F66001C9351 /* logout_icon.png */; };
+		41D6F3EA18091F66001C9351 /* logout_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6F3E618091F66001C9351 /* logout_icon@2x.png */; };
+		41D6F3ED1809247A001C9351 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D6F3EC1809247A001C9351 /* JoinViewController.m */; };
+		41D6F3EF180933EC001C9351 /* icon_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6F3EE180933EC001C9351 /* icon_default.png */; };
 		41F9624F1636671200AF771A /* CommunityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F9624E1636671200AF771A /* CommunityTableViewController.m */; };
 		41F962521636676500AF771A /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F962511636676500AF771A /* Article.m */; };
 		41F962561636FF0E00AF771A /* HttpAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F962551636FF0E00AF771A /* HttpAdapter.m */; };
@@ -149,6 +171,10 @@
 		412BA63D163583B40036F19B /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		412BA6441635BB880036F19B /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
 		412BA64D1635BD0C0036F19B /* coffee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffee@2x.png"; sourceTree = "<group>"; };
+		412E640B1801BADC000213F4 /* icon_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_map.png; sourceTree = "<group>"; };
+		412E640C1801BADC000213F4 /* icon_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_map@2x.png"; sourceTree = "<group>"; };
+		412E640E1801BADC000213F4 /* icon_homepage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_homepage@2x.png"; sourceTree = "<group>"; };
+		412E64131801BB12000213F4 /* icon_homepage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_homepage.png; sourceTree = "<group>"; };
 		413943591639753000394C8F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4139435A1639753000394C8F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		413B2361163D37CF00B03C10 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -190,6 +216,26 @@
 		416F4BCE16391C93000C8FB0 /* story@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "story@2x.png"; sourceTree = "<group>"; };
 		41BCF810163D256000F01C43 /* CheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinViewController.h; sourceTree = "<group>"; };
 		41BCF811163D256000F01C43 /* CheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinViewController.m; sourceTree = "<group>"; };
+		41BD07FB180C29B60021B290 /* JakcoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JakcoPin.h; sourceTree = "<group>"; };
+		41BD07FC180C29B60021B290 /* JakcoPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JakcoPin.m; sourceTree = "<group>"; };
+		41D41C301801A33300111496 /* bg_home-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_home-568h.png"; sourceTree = "<group>"; };
+		41D41C311801A33400111496 /* bg_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_home.png; sourceTree = "<group>"; };
+		41D41C341801B16800111496 /* bg_home2-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_home2-568h@2x.png"; sourceTree = "<group>"; };
+		41D41C351801B16800111496 /* bg_home2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_home2.png; sourceTree = "<group>"; };
+		41D41C361801B16800111496 /* bg_home2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_home2@2x.png"; sourceTree = "<group>"; };
+		41D41C3A1801B49D00111496 /* bg_helper_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_helper_3.png; sourceTree = "<group>"; };
+		41D41C3B1801B49D00111496 /* bg_helper_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_helper_3@2x.png"; sourceTree = "<group>"; };
+		41D41C401801B76F00111496 /* bg_helper_3-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_helper_3-568h@2x.png"; sourceTree = "<group>"; };
+		41D52F66180C1F0E00C738A7 /* check_in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_in.png; sourceTree = "<group>"; };
+		41D52F67180C1F0E00C738A7 /* check_in@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_in@2x.png"; sourceTree = "<group>"; };
+		41D52F6A180C1FA700C738A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		41D6F3E318091F66001C9351 /* login_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_icon.png; sourceTree = "<group>"; };
+		41D6F3E418091F66001C9351 /* login_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_icon@2x.png"; sourceTree = "<group>"; };
+		41D6F3E518091F66001C9351 /* logout_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout_icon.png; sourceTree = "<group>"; };
+		41D6F3E618091F66001C9351 /* logout_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout_icon@2x.png"; sourceTree = "<group>"; };
+		41D6F3EB1809247A001C9351 /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		41D6F3EC1809247A001C9351 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
+		41D6F3EE180933EC001C9351 /* icon_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_default.png; sourceTree = "<group>"; };
 		41F9624D1636671200AF771A /* CommunityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityTableViewController.h; sourceTree = "<group>"; };
 		41F9624E1636671200AF771A /* CommunityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityTableViewController.m; sourceTree = "<group>"; };
 		41F962501636676500AF771A /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
@@ -203,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D52F6B180C1FA700C738A7 /* MapKit.framework in Frameworks */,
 				4120A282163F538F00C7C3AB /* libsqlite3.0.dylib in Frameworks */,
 				412BA609163570310036F19B /* UIKit.framework in Frameworks */,
 				412BA60B163570310036F19B /* Foundation.framework in Frameworks */,
@@ -216,6 +263,15 @@
 		4120A251163EE22C00C7C3AB /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				41D6F3EE180933EC001C9351 /* icon_default.png */,
+				41D6F3E318091F66001C9351 /* login_icon.png */,
+				41D6F3E418091F66001C9351 /* login_icon@2x.png */,
+				41D6F3E518091F66001C9351 /* logout_icon.png */,
+				41D6F3E618091F66001C9351 /* logout_icon@2x.png */,
+				412E640B1801BADC000213F4 /* icon_map.png */,
+				412E640C1801BADC000213F4 /* icon_map@2x.png */,
+				412E64131801BB12000213F4 /* icon_homepage.png */,
+				412E640E1801BADC000213F4 /* icon_homepage@2x.png */,
 				413B23BF163E680100B03C10 /* Icon@2x.png */,
 				413B23C0163E680100B03C10 /* Icon.png */,
 				413B2376163D519200B03C10 /* location.png */,
@@ -227,6 +283,8 @@
 		4120A252163EE23700C7C3AB /* button */ = {
 			isa = PBXGroup;
 			children = (
+				41D52F66180C1F0E00C738A7 /* check_in.png */,
+				41D52F67180C1F0E00C738A7 /* check_in@2x.png */,
 				4120A253163EE25600C7C3AB /* login.png */,
 				4120A254163EE25600C7C3AB /* login@2x.png */,
 				4120A255163EE25600C7C3AB /* upload.png */,
@@ -283,6 +341,7 @@
 		412BA607163570310036F19B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				41D52F6A180C1FA700C738A7 /* MapKit.framework */,
 				4120A281163F538F00C7C3AB /* libsqlite3.0.dylib */,
 				412BA608163570310036F19B /* UIKit.framework */,
 				412BA60A163570310036F19B /* Foundation.framework */,
@@ -313,6 +372,8 @@
 				4120A277163F4F8000C7C3AB /* LoginViewController.m */,
 				4120A23E163EB84500C7C3AB /* WriteArticleViewController.h */,
 				4120A23F163EB84500C7C3AB /* WriteArticleViewController.m */,
+				41D6F3EB1809247A001C9351 /* JoinViewController.h */,
+				41D6F3EC1809247A001C9351 /* JoinViewController.m */,
 				41F962531636676C00AF771A /* Model */,
 				412BA60F163570310036F19B /* Supporting Files */,
 				412BA63F1635AFD90036F19B /* Task Test */,
@@ -348,6 +409,14 @@
 		413B235B163D378700B03C10 /* background */ = {
 			isa = PBXGroup;
 			children = (
+				41D41C3A1801B49D00111496 /* bg_helper_3.png */,
+				41D41C3B1801B49D00111496 /* bg_helper_3@2x.png */,
+				41D41C401801B76F00111496 /* bg_helper_3-568h@2x.png */,
+				41D41C341801B16800111496 /* bg_home2-568h@2x.png */,
+				41D41C351801B16800111496 /* bg_home2.png */,
+				41D41C361801B16800111496 /* bg_home2@2x.png */,
+				41D41C301801A33300111496 /* bg_home-568h.png */,
+				41D41C311801A33400111496 /* bg_home.png */,
 				4120A236163E960B00C7C3AB /* bg_helper.png */,
 				4120A237163E960B00C7C3AB /* bg_helper@2x.png */,
 				413B23C3163E6D5200B03C10 /* bg6.png */,
@@ -438,6 +507,8 @@
 				41F962511636676500AF771A /* Article.m */,
 				413B23B0163E64C400B03C10 /* Notice.h */,
 				413B23B1163E64C400B03C10 /* Notice.m */,
+				41BD07FB180C29B60021B290 /* JakcoPin.h */,
+				41BD07FC180C29B60021B290 /* JakcoPin.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -470,6 +541,16 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = doubleline;
+				TargetAttributes = {
+					412BA603163570310036F19B = {
+						DevelopmentTeam = L7F6J9DCHD;
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 412BA5FE163570310036F19B /* Build configuration list for PBXProject "cafejakco" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -495,6 +576,8 @@
 			files = (
 				412BA613163570310036F19B /* InfoPlist.strings in Resources */,
 				412BA61F163570310036F19B /* Default-568h@2x.png in Resources */,
+				41D41C411801B76F00111496 /* bg_helper_3-568h@2x.png in Resources */,
+				41D41C381801B16800111496 /* bg_home2.png in Resources */,
 				412BA622163570310036F19B /* MainStoryboard.storyboard in Resources */,
 				412BA6451635BB880036F19B /* coffee.png in Resources */,
 				412BA64F1635BD0C0036F19B /* coffee@2x.png in Resources */,
@@ -514,16 +597,28 @@
 				413B237D163D541D00B03C10 /* location@2x.png in Resources */,
 				413B238C163D80F100B03C10 /* navbar_checkin.png in Resources */,
 				413B238D163D80F100B03C10 /* navbar_checkin@2x.png in Resources */,
+				41D52F68180C1F0E00C738A7 /* check_in.png in Resources */,
 				413B238E163D80F100B03C10 /* navbar_freeboard.png in Resources */,
 				413B238F163D80F100B03C10 /* navbar_freeboard@2x.png in Resources */,
+				412E640F1801BADC000213F4 /* icon_map.png in Resources */,
+				41D41C3C1801B49D00111496 /* bg_helper_3.png in Resources */,
 				413B2390163D80F100B03C10 /* navbar_helper.png in Resources */,
+				41D6F3E918091F66001C9351 /* logout_icon.png in Resources */,
 				413B2391163D80F100B03C10 /* navbar_helper@2x.png in Resources */,
+				41D41C331801A33400111496 /* bg_home.png in Resources */,
 				413B2392163D80F100B03C10 /* navbar_home.png in Resources */,
+				41D6F3E818091F66001C9351 /* login_icon@2x.png in Resources */,
+				41D41C3D1801B49D00111496 /* bg_helper_3@2x.png in Resources */,
 				413B2393163D80F100B03C10 /* navbar_home@2x.png in Resources */,
 				413B2394163D80F100B03C10 /* navbar_member.png in Resources */,
 				413B2395163D80F100B03C10 /* navbar_member@2x.png in Resources */,
+				41D41C391801B16800111496 /* bg_home2@2x.png in Resources */,
+				41D41C321801A33400111496 /* bg_home-568h.png in Resources */,
 				413B2396163D80F100B03C10 /* navbar_story.png in Resources */,
+				41D52F69180C1F0E00C738A7 /* check_in@2x.png in Resources */,
 				413B2397163D80F100B03C10 /* navbar_story@2x.png in Resources */,
+				412E64121801BADC000213F4 /* icon_homepage@2x.png in Resources */,
+				41D41C371801B16800111496 /* bg_home2-568h@2x.png in Resources */,
 				413B23A4163E2DE400B03C10 /* navbar_detail.png in Resources */,
 				413B23A5163E2DE400B03C10 /* navbar_detail@2x.png in Resources */,
 				413B23C1163E680100B03C10 /* Icon@2x.png in Resources */,
@@ -533,6 +628,7 @@
 				413B23D1163E7AAE00B03C10 /* navbar_notice.png in Resources */,
 				413B23D2163E7AAE00B03C10 /* navbar_notice@2x.png in Resources */,
 				41120CC1163E912200B4DDA7 /* cafejakco-Info.plist in Resources */,
+				41D6F3EF180933EC001C9351 /* icon_default.png in Resources */,
 				4120A238163E960B00C7C3AB /* bg_helper.png in Resources */,
 				4120A239163E960B00C7C3AB /* bg_helper@2x.png in Resources */,
 				4120A247163EC96900C7C3AB /* navbar_write.png in Resources */,
@@ -540,6 +636,7 @@
 				4120A24D163ED16E00C7C3AB /* navbar_login.png in Resources */,
 				4120A24E163ED16E00C7C3AB /* navbar_login@2x.png in Resources */,
 				4120A24F163ED16E00C7C3AB /* navbar_register.png in Resources */,
+				41D6F3E718091F66001C9351 /* login_icon.png in Resources */,
 				4120A250163ED16E00C7C3AB /* navbar_register@2x.png in Resources */,
 				4120A257163EE25600C7C3AB /* login.png in Resources */,
 				4120A258163EE25600C7C3AB /* login@2x.png in Resources */,
@@ -549,9 +646,12 @@
 				4120A263163EE7C700C7C3AB /* upload1@2x.png in Resources */,
 				4120A264163EE7C700C7C3AB /* upload2.png in Resources */,
 				4120A265163EE7C700C7C3AB /* upload2@2x.png in Resources */,
+				41D6F3EA18091F66001C9351 /* logout_icon@2x.png in Resources */,
 				4120A266163EE7C700C7C3AB /* upload3.png in Resources */,
 				4120A267163EE7C700C7C3AB /* upload3@2x.png in Resources */,
+				412E64141801BB12000213F4 /* icon_homepage.png in Resources */,
 				4120A26A163EEAA500C7C3AB /* upload4.png in Resources */,
+				412E64101801BADC000213F4 /* icon_map@2x.png in Resources */,
 				4120A26B163EEAA500C7C3AB /* upload4@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +665,8 @@
 			files = (
 				412BA615163570310036F19B /* main.m in Sources */,
 				412BA619163570310036F19B /* AppDelegate.m in Sources */,
+				41BD07FD180C29B60021B290 /* JakcoPin.m in Sources */,
+				41D6F3ED1809247A001C9351 /* JoinViewController.m in Sources */,
 				412BA63816357BF40036F19B /* Task.m in Sources */,
 				412BA63B16357D7B0036F19B /* TaskListViewController.m in Sources */,
 				412BA63E163583B40036F19B /* AddTaskViewController.m in Sources */,
@@ -660,6 +762,7 @@
 		412BA634163570310036F19B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Byeol Kang (HMB937P2ZM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Byeol Kang (HMB937P2ZM)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cafejakco/cafejakco-Prefix.pch";
@@ -667,7 +770,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F8DDC2C1-C212-4470-950A-E1B344347B67";
+				PROVISIONING_PROFILE = "6D870969-0837-4C22-A7F9-21BB2BC90A17";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6D870969-0837-4C22-A7F9-21BB2BC90A17";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = NO;
@@ -678,6 +782,7 @@
 		412BA635163570310036F19B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Byeol Kang (HMB937P2ZM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Byeol Kang (HMB937P2ZM)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cafejakco/cafejakco-Prefix.pch";
@@ -685,7 +790,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F8DDC2C1-C212-4470-950A-E1B344347B67";
+				PROVISIONING_PROFILE = "6D870969-0837-4C22-A7F9-21BB2BC90A17";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6D870969-0837-4C22-A7F9-21BB2BC90A17";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

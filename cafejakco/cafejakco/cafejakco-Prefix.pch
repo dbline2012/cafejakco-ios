@@ -12,3 +12,17 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define URL_JAKCO_HOMEPAGE  @"http://cafejakco.co.kr/"
+#define URL_JAKCO_MAP       @"http://map.naver.com/?dlevel=11&pinType=site&pinId=18636743&x=127.0619812&y=37.6204583&enc=b64"
+
+#define URL_JAKCO_SERVER_NOTICE             @"http://dbline2013.cafe24.com/notice/"
+#define URL_JAKCO_SERVER_COMMUNITY          @"http://dbline2013.cafe24.com/community/3/"
+#define URL_JAKCO_SERVER_COMMUNITY_UPLOAD   @"http://dbline2013.cafe24.com/community/post/"
+#define URL_JAKCO_SERVER_CHECKIN            @"http://dbline2013.cafe24.com/checkin/"
+#define URL_JAKCO_SERVER_MEMBERSHIP         @"http://dbline2013.cafe24.com/membership/"
+#define URL_JAKCO_SERVER_LOGIN              @"http://dbline2013.cafe24.com/login/"
+#define URL_JAKCO_SERVER_LOGOUT             @"http://dbline2013.cafe24.com/logout/"
+
+#define MAP_LATITUDE        37.6204583
+#define MAP_LONGITUDE       127.0619812

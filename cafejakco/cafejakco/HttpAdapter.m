@@ -11,7 +11,7 @@
 @implementation HttpAdapter
 
 @synthesize urlString = _urlString;
-@synthesize receiveData = _receiveData;
+@synthesize receivedData = _receivedData;
 @synthesize response = _response;
 
 - (id)initWithUrl:(NSString *)restUrlString;
@@ -33,8 +33,50 @@
     return array;
 }
 
-- (BOOL)SendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict
+- (NSString *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict
 {
+    isFinishLoading = FALSE;
+    url = [NSURL URLWithString:restUrlString];
+    request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    /* setBody */
+    NSString *boundary = @"0xKhTmLbOuNdArY";
+    NSString* contentType = [NSString stringWithFormat:@"application/x-www-form-urlencoded; boundary=%@", boundary];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    NSMutableData* body = [NSMutableData data];
+    NSError *error = nil;
+    NSData *json = [NSJSONSerialization dataWithJSONObject:postDict options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding];
+    [body appendData:[[NSString stringWithFormat:@"%@", jsonString] dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    /* Authorization */
+//    NSString *authStr = [NSString stringWithFormat:@"%@:%@", [postDict objectForKey:@"username"], [postDict objectForKey:@"password"]];
+//    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
+//    
+//    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [self base64EncodingWithLineLength:80 data:authData]];
+//    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
+    
+    receivedData = [NSMutableData data];
+    
+    NSURLResponse *response;
+    NSError *err;
+    NSMutableData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    if (responseData)
+    {
+        NSLog(@"[HttpAdapter/SyncSendPostDataWithUrl] connection ok : %@", responseString);
+        return responseString;
+    }
+    return @"fail";
+}
+
+- (BOOL)AsyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict
+{
+    isFinishLoading = FALSE;
     url = [NSURL URLWithString:restUrlString];
     request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -58,10 +100,12 @@
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [self base64EncodingWithLineLength:80 data:authData]];
     [request setValue:authValue forHTTPHeaderField:@"Authorization"];
     
+    receivedData = [NSMutableData data];
     connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    
     if (connection)
     {
-        self.receiveData = [NSMutableData data];
+        NSLog(@"[HttpAdapter/AsyncSendPostDataWithUrl] connection ok");
         return YES;
     }
     return NO;
@@ -80,12 +124,15 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    NSLog(@"Error : %@", [error localizedDescription]);
+    NSLog(@"[HttpAdapter/didFailWithError] Error : %@", [error localizedDescription]);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     dataString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    NSLog(@"[HttpAdapter/connectionDidFinishLoading] %@", dataString);
+    isFinishLoading = TRUE;
+    
 }
 
 - (NSString *)base64EncodingWithLineLength:(unsigned int)lineLength data:(NSData *)imgData

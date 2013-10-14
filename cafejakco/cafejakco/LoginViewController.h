@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITextField *idTextField;
+@property (strong, nonatomic) IBOutlet UITextField *pwTextField;
 
+- (IBAction)actionBack:(id)sender;
+- (IBAction)actionLogin:(id)sender;
 @end

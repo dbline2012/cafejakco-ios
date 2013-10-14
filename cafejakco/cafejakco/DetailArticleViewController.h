@@ -17,8 +17,10 @@
     UILabel *usernameLabel;
     UILabel *dateLabel;
     UITextView *contentLabel;
+    NSInteger pno;
 }
 
+- (IBAction)actionBack:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;

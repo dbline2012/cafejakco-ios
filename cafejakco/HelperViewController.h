@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HelperViewController : UIViewController
+@interface HelperViewController : UITableViewController
 
 @end

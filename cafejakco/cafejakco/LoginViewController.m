@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "HttpAdapter.h"
+
 
 @interface LoginViewController ()
 
@@ -27,17 +29,17 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [self.view addGestureRecognizer:tap];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_login.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_login.png"] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationItem.backBarButtonItem = [UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:191/255.0 green:20/255.0 blue:81/255.0 alpha:1.0]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,4 +48,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)handleTap:(UITapGestureRecognizer *)recognizer
+{
+    NSLog(@"[LoginViewController/handleTap] End editing");
+    [self.view endEditing:YES];
+}
+
+- (IBAction)actionBack:(id)sender {
+    if(self.navigationController.viewControllers.count > 1) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (IBAction)actionLogin:(id)sender {
+    HttpAdapter *httpAdapter = [[HttpAdapter alloc] init];
+    NSDictionary *postDataDic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 self.idTextField.text, @"username",
+                                 self.pwTextField.text, @"password",
+                                 nil];
+    
+    if ([[httpAdapter SyncSendPostDataWithUrl:@"http://localhost:8000/login/" postData:postDataDic] isEqualToString:@"{\"status\": \"login success\"}"]) {
+        NSLog(@"[LoginViewController/actionLogin] login success");
+        [self actionBack:self];
+    }
+    else
+        NSLog(@"[LoginViewController/actionLogin] login fail");
+}
 @end
