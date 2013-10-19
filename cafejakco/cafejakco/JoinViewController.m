@@ -56,17 +56,17 @@
 - (IBAction)actionJoin:(id)sender {
     
     if ([self.pwTextField.text length] < 6) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"비밀번호는 6자리 이상 입력하세요." delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"비밀번호는 6자리 이상 입력하세요." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
         [alert show];
         return;
     }
     else if (![self.pwTextField.text isEqualToString:self.pwCheckTextField.text]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"비밀번호 확인이 맞지 않습니다." delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"비밀번호 확인이 맞지 않습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
         [alert show];
         return;
     }
     else if ([self.nicknameTextField.text length] > 11) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"별명은 최대 11자까지만 입력하세요." delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"별명은 최대 11자까지만 입력하세요." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
         [alert show];
         return;
     }
@@ -79,13 +79,12 @@
                                  @"null", @"image",
                                  nil];
     
-//    if ([[httpAdapter SyncSendPostDataWithUrl:URL_JAKCO_SERVER_MEMBERSHIP postData:postDataDic] isEqualToString:@"{\"status\": \"create success\"}"]) {
     if ([httpAdapter AsyncSendPostDataWithUrl:URL_JAKCO_SERVER_MEMBERSHIP postData:postDataDic]) {
         NSLog(@"[JoinViewController/actionUpload] upload success");
-        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"가입이 완료되었습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+        [alert show];
         [self actionBack:self];
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]회원가입" message:@"가입이 완료되었습니다." delegate:self cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
-//        [alert show];
+
     }
     else
         NSLog(@"[JoinViewController/actionUpload] upload fail");

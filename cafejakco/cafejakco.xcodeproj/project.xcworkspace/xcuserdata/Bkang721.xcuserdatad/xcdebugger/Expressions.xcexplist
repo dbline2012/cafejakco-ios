@@ -3,10 +3,29 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[HttpAdapter SendPostDataWithUrl:postData:]:HttpAdapter.m">
+         contextName = "-[HttpAdapter connection:didReceiveData:]:HttpAdapter.m">
       </ContextState>
       <ContextState
-         contextName = "-[HttpAdapter connection:didReceiveData:]:HttpAdapter.m">
+         contextName = "-[AppDelegate applicationDidEnterBackground:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "AppDBAdapter">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController actionLogin:]:LoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[responseArray objectAtIndex:0]">
+            </PersistentString>
+            <PersistentString
+               value = "[responseArray count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HttpAdapter SendPostDataWithUrl:postData:]:HttpAdapter.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

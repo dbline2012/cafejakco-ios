@@ -11,7 +11,9 @@
 #import "Article.h"
 #import "CustomArticleCell.h"
 #import "DetailArticleViewController.h"
+#import "WriteArticleViewController.h"
 #import "LoadingView.h"
+#import "AppSession.h"
 
 @interface CommunityTableViewController ()
 
@@ -121,6 +123,14 @@
     if ([segue.identifier isEqualToString:@"DetailArticleSeque"]) {
         detailArticleViewController = segue.destinationViewController;
         [detailArticleViewController setArticle:[articles objectAtIndex:self.tableView.indexPathForSelectedRow.row]];
+    }
+    else if ([segue.identifier isEqualToString:@"WriteArticleSeque"]) {
+//        if ([[AppSession getIsLogin] isEqualToString:@"NO"])
+//        {
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커] 이야기" message:@"로그인 하셔야 글을 작성할 수 있습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+//            [alert show];
+//
+//        }
     }
     
 }

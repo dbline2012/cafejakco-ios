@@ -7,12 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDBAdapter.h"
+#import "AppSession.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [AppDBAdapter initDB];
+    
+    NSArray *appInfoArray = [AppDBAdapter GetContentsArray];
+    NSLog(@"[AppDelegate/didFinishLaunchingWithOptions] cafejakco_meta table row count : %d", [appInfoArray count]);
+    NSLog(@"[AppDelegate/didFinishLaunchingWithOptions] userid : %@", [AppDBAdapter GetContentWithKey:@"userid"]);
+    NSLog(@"[AppDelegate/didFinishLaunchingWithOptions] username : %@", [AppDBAdapter GetContentWithKey:@"username"]);
+    NSLog(@"[AppDelegate/didFinishLaunchingWithOptions] nickname : %@", [AppDBAdapter GetContentWithKey:@"nickname"]);
+    NSLog(@"[AppDelegate/didFinishLaunchingWithOptions] islogin : %@", [AppDBAdapter GetContentWithKey:@"islogin"]);
+    
+    [AppDBAdapter AppDBToSession];
+    
     return YES;
 }
 							
@@ -26,6 +39,8 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSLog(@"[AppDelegate/applicationDidEnterBackground] AppSessionToDB");
+    [AppDBAdapter AppSessionToDB];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -41,6 +56,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSLog(@"[AppDelegate/applicationWillTerminate] AppSessionToDB");
+    [AppDBAdapter AppSessionToDB];
 }
 
 @end

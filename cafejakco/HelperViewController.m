@@ -7,12 +7,16 @@
 //
 
 #import "HelperViewController.h"
+#import "AppSession.h"
 
 @interface HelperViewController ()
 
 @end
 
 @implementation HelperViewController
+
+@synthesize nicknameTextField = _nicknameTextField;
+@synthesize usernameTextField = _usernameTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,7 +44,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+    self.usernameTextField.text = [AppSession getUsername];
+    self.nicknameTextField.text = [AppSession getNickname];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,4 +54,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)ActionLoginView:(id)sender {
+    if ([[AppSession getIsLogin] isEqualToString:@"YES"])
+    {
+        [AppSession setUserId:@""];
+        [AppSession setUsername:@""];
+        [AppSession setNickname:@""];
+        [AppSession setIsLogin:@"NO"];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커] 헬퍼" message:@"로그아웃 되었습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+        [alert show];
+    }
+    
+}
 @end

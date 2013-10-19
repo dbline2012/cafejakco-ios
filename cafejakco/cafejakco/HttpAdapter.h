@@ -29,7 +29,7 @@
 
 - (NSMutableArray *)GetJsonDataWithUrl:(NSString *)restUrlString;
 
-- (NSString *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
+- (NSMutableArray *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
 - (BOOL)AsyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
 
 - (NSString *)base64EncodingWithLineLength:(unsigned int)lineLength data:(NSData *)imgData;

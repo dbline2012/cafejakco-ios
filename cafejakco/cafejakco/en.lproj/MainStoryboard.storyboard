@@ -115,7 +115,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="Clo-Ve-dIc">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="giB-gX-7wl" kind="push" id="lWt-AW-AP2"/>
+                                <segue destination="giB-gX-7wl" kind="push" identifier="WriteArticleSeque" id="lWt-AW-AP2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -695,7 +695,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="● 별명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44L-v8-cRu">
-                                                    <rect key="frame" x="98" y="20" width="100" height="21"/>
+                                                    <rect key="frame" x="98" y="20" width="47" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -737,10 +737,15 @@
                         <barButtonItem key="rightBarButtonItem" image="login_icon.png" id="oZ4-DE-H99">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Qr6-Pb-pnj" kind="push" id="uSx-AS-bpc"/>
+                                <action selector="ActionLoginView:" destination="O1l-VK-fyz" id="4Rf-hs-0XN"/>
+                                <segue destination="Qr6-Pb-pnj" kind="push" identifier="LoginViewSeque" id="uSx-AS-bpc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nicknameTextField" destination="uw6-hJ-KVY" id="3M3-yk-frt"/>
+                        <outlet property="usernameTextField" destination="nSZ-Nz-fr8" id="zgj-Ln-fxh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLC-ZT-uYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

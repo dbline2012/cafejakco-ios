@@ -10,12 +10,14 @@
 
 @class HttpAdapter;
 @class DetailArticleViewController;
+@class WriteArticleViewController;
 @class LoadingView;
 
 @interface CommunityTableViewController : UITableViewController
 {
     NSArray *articles;
     DetailArticleViewController *detailArticleViewController;
+    WriteArticleViewController *writeArticleViewController;
     LoadingView *loadingView;
     int page_num;
 }

@@ -33,7 +33,7 @@
     return array;
 }
 
-- (NSString *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict
+- (NSMutableArray *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict
 {
     isFinishLoading = FALSE;
     url = [NSURL URLWithString:restUrlString];
@@ -64,14 +64,18 @@
     NSURLResponse *response;
     NSError *err;
     NSMutableData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    NSMutableArray *array = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    
+   
     
     if (responseData)
     {
-        NSLog(@"[HttpAdapter/SyncSendPostDataWithUrl] connection ok : %@", responseString);
-        return responseString;
+        NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"[HttpAdapter/SyncSendPostDataWithUrl] connection ok - response data : %@", responseString);
+        return array;
     }
-    return @"fail";
+    return NULL;
 }
 
 - (BOOL)AsyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict
@@ -94,11 +98,11 @@
     [request setHTTPBody:body];
     
     /* Authorization */
-    NSString *authStr = [NSString stringWithFormat:@"%@:%@", [postDict objectForKey:@"username"], [postDict objectForKey:@"password"]];
-    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
-    
-    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [self base64EncodingWithLineLength:80 data:authData]];
-    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
+//    NSString *authStr = [NSString stringWithFormat:@"%@:%@", [postDict objectForKey:@"username"], [postDict objectForKey:@"password"]];
+//    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
+//    
+//    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [self base64EncodingWithLineLength:80 data:authData]];
+//    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
     
     receivedData = [NSMutableData data];
     connection = [NSURLConnection connectionWithRequest:request delegate:self];

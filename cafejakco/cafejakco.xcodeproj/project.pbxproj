@@ -90,6 +90,7 @@
 		416F4BD016391C93000C8FB0 /* helper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 416F4BCC16391C93000C8FB0 /* helper@2x.png */; };
 		416F4BD116391C93000C8FB0 /* member@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 416F4BCD16391C93000C8FB0 /* member@2x.png */; };
 		416F4BD216391C93000C8FB0 /* story@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 416F4BCE16391C93000C8FB0 /* story@2x.png */; };
+		41895D2718123423003EC4C5 /* AppSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 41895D2618123423003EC4C5 /* AppSession.m */; };
 		41BCF812163D256000F01C43 /* CheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BCF811163D256000F01C43 /* CheckinViewController.m */; };
 		41BD07FD180C29B60021B290 /* JakcoPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BD07FC180C29B60021B290 /* JakcoPin.m */; };
 		41D41C321801A33400111496 /* bg_home-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C301801A33300111496 /* bg_home-568h.png */; };
@@ -214,6 +215,8 @@
 		416F4BCC16391C93000C8FB0 /* helper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "helper@2x.png"; sourceTree = "<group>"; };
 		416F4BCD16391C93000C8FB0 /* member@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "member@2x.png"; sourceTree = "<group>"; };
 		416F4BCE16391C93000C8FB0 /* story@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "story@2x.png"; sourceTree = "<group>"; };
+		41895D2518123423003EC4C5 /* AppSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSession.h; sourceTree = "<group>"; };
+		41895D2618123423003EC4C5 /* AppSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSession.m; sourceTree = "<group>"; };
 		41BCF810163D256000F01C43 /* CheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinViewController.h; sourceTree = "<group>"; };
 		41BCF811163D256000F01C43 /* CheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinViewController.m; sourceTree = "<group>"; };
 		41BD07FB180C29B60021B290 /* JakcoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JakcoPin.h; sourceTree = "<group>"; };
@@ -317,6 +320,8 @@
 				4120A270163F00EB00C7C3AB /* LoadingView.m */,
 				4120A27E163F528100C7C3AB /* AppDBAdapter.h */,
 				4120A27F163F528100C7C3AB /* AppDBAdapter.m */,
+				41895D2518123423003EC4C5 /* AppSession.h */,
+				41895D2618123423003EC4C5 /* AppSession.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -671,6 +676,7 @@
 				412BA63B16357D7B0036F19B /* TaskListViewController.m in Sources */,
 				412BA63E163583B40036F19B /* AddTaskViewController.m in Sources */,
 				41F9624F1636671200AF771A /* CommunityTableViewController.m in Sources */,
+				41895D2718123423003EC4C5 /* AppSession.m in Sources */,
 				41F962521636676500AF771A /* Article.m in Sources */,
 				41F962561636FF0E00AF771A /* HttpAdapter.m in Sources */,
 				41BCF812163D256000F01C43 /* CheckinViewController.m in Sources */,

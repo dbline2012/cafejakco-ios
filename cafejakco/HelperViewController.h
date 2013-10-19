@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HelperViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITextField *nicknameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
+
+- (IBAction)ActionLoginView:(id)sender;
 
 @end

@@ -7,12 +7,13 @@
 //
 
 #import "CheckinViewController.h"
+#import "AppSession.h"
 
 @interface CheckinViewController ()
 
 @end
 
-#define METERS_PER_MILE 1609.344
+
 
 @implementation CheckinViewController
 
@@ -43,7 +44,6 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.1 * METERS_PER_MILE, 0.1 * METERS_PER_MILE);
     [self.mapView setRegion:viewRegion animated:YES];
     
-    MKAnnotationView *annotationView = [[MKAnnotationView alloc] init];
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     [annotation setCoordinate:zoomLocation];
     [annotation setTitle:@"작은커피집"];
@@ -67,5 +67,13 @@
 
 - (IBAction)actionCheckin:(id)sender {
     NSLog(@"%f %f", myLocation.coordinate.latitude, myLocation.coordinate.longitude);
+    if ([[AppSession getIsLogin] isEqualToString:@"NO"])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커] 발자국" message:@"로그인 하셔야 발자국을 찍을 수 있습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+        [alert show];
+        
+        return;
+        
+    }
 }
 @end

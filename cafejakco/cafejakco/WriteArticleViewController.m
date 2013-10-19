@@ -8,6 +8,7 @@
 
 #import "WriteArticleViewController.h"
 #import "HttpAdapter.h"
+#import "AppSession.h"
 
 @interface WriteArticleViewController ()
 
@@ -41,7 +42,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if ([[AppSession getIsLogin] isEqualToString:@"NO"])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커] 글쓰기" message:@"로그인 하셔야 글을 작성할 수 있습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+        [alert show];
+        
+        [self actionBack:self];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,19 +72,35 @@
 - (IBAction)actionUpload:(id)sender {
     HttpAdapter *httpAdapter = [[HttpAdapter alloc] init];
     NSDictionary *postDataDic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 @"1", @"user_id",
+                                 [AppSession getUserId], @"user_id",
                                  @"3", @"group_id",
                                  self.titleTextField.text, @"title",
                                  self.contentTextView.text, @"content",
                                  @"null", @"image",
                                  nil];
     
-    if ([[httpAdapter SyncSendPostDataWithUrl:URL_JAKCO_SERVER_COMMUNITY_UPLOAD postData:postDataDic] isEqualToString:@"{\"status\": \"create success\"}"]) {
-        NSLog(@"[WriteArticleViewController/actionUpload] upload success");
-        [self actionBack:self];
+    NSArray *responseArray = [httpAdapter SyncSendPostDataWithUrl:URL_JAKCO_SERVER_COMMUNITY_UPLOAD postData:postDataDic];
+
+    if (responseArray && ([responseArray count] > 0)) {
+        NSDictionary *resultDict = [responseArray objectAtIndex:0];
+        
+        if ([[resultDict objectForKey:@"status"] isEqualToString:@"fail"]) {
+            NSLog(@"[WriteArticleViewController/actionUpload] upload fail");
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]글쓰기" message:@"글쓰기를 실패하였습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+            [alert show];
+            return;
+        }
+        else if([[resultDict objectForKey:@"status"] isEqualToString:@"success"])
+        {
+            NSLog(@"[WriteArticleViewController/actionUpload] upload success");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커]글쓰기" message:@"글쓰기를 성공하였습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
+            [alert show];
+            
+            [self actionBack:self];
+            
+        }
     }
-    else
-        NSLog(@"[WriteArticleViewController/actionUpload] upload fail");
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)recognizer
