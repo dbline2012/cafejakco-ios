@@ -134,6 +134,9 @@
                 }
             });
         }
+        else{
+            cell.imageView.image = [UIImage imageNamed:@"icon_default.png"];
+        }
     }
     
     return cell;
