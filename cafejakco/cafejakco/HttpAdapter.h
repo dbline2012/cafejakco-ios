@@ -28,8 +28,8 @@
 - (id)initWithUrl:(NSString *)restUrlString;
 
 - (NSMutableArray *)GetJsonDataWithUrl:(NSString *)restUrlString;
-
 - (NSMutableArray *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
+- (NSMutableArray *)SyncSendPostImageDataWithUrl:(NSString *)restUrlString file:(NSData *)file filename:(NSString *)filename;
 - (BOOL)AsyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict;
 
 - (NSString *)base64EncodingWithLineLength:(unsigned int)lineLength data:(NSData *)imgData;

@@ -14,10 +14,13 @@
 @interface CheckinViewController : UIViewController <MKMapViewDelegate>
 {
     MKUserLocation *myLocation;
+    BOOL viewMyLocation;
 }
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 - (IBAction)actionCheckin:(id)sender;
-
+- (IBAction)actionMyLocation:(id)sender;
+- (BOOL)isEnableCheckin;
+- (double)distanceWithCoordinate:(CLLocationCoordinate2D)curCoord oldCoord:(CLLocationCoordinate2D)oldCoord;
 @end

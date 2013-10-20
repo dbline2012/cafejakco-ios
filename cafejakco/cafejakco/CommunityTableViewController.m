@@ -113,6 +113,27 @@
         cell.usernameLabel.text = [currentArticle valueForKey:@"user_name"];
         cell.titleLabel.text = [currentArticle valueForKey:@"title"];
         cell.dateLabel.text = [[[[NSString stringWithFormat:[currentArticle valueForKey:@"created"]] stringByReplacingOccurrencesOfString:@"-" withString:@"/"] componentsSeparatedByString:@" "] objectAtIndex:0];
+        
+        
+        if (![[currentArticle valueForKey:@"image"] isEqualToString:@"null"]) {
+            dispatch_queue_t dQueue = dispatch_queue_create("com.apple.testQueue", NULL);
+            dispatch_async(dQueue, ^{
+                UIImage *image = NULL;
+                @try {
+                    NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@", URL_JAKCO_SERVER_IMAGE, THUMBNAIL, [currentArticle valueForKey:@"image"]]];
+                    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+                    image = [UIImage imageWithData:imageData];
+                }
+                @catch (NSException * e) {
+                    NSLog(@"Error: %@%@", [e name], [e reason]);
+                }
+                @finally {
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        cell.imageView.image = image;
+                    });
+                }
+            });
+        }
     }
     
     return cell;
@@ -123,14 +144,6 @@
     if ([segue.identifier isEqualToString:@"DetailArticleSeque"]) {
         detailArticleViewController = segue.destinationViewController;
         [detailArticleViewController setArticle:[articles objectAtIndex:self.tableView.indexPathForSelectedRow.row]];
-    }
-    else if ([segue.identifier isEqualToString:@"WriteArticleSeque"]) {
-//        if ([[AppSession getIsLogin] isEqualToString:@"NO"])
-//        {
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[작커] 이야기" message:@"로그인 하셔야 글을 작성할 수 있습니다." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"확인", nil];
-//            [alert show];
-//
-//        }
     }
     
 }

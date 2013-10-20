@@ -35,7 +35,6 @@
 
 - (NSMutableArray *)SyncSendPostDataWithUrl:(NSString *)restUrlString postData:(NSDictionary *)postDict
 {
-    isFinishLoading = FALSE;
     url = [NSURL URLWithString:restUrlString];
     request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -52,13 +51,6 @@
     [body appendData:[[NSString stringWithFormat:@"%@", jsonString] dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPBody:body];
     
-    /* Authorization */
-//    NSString *authStr = [NSString stringWithFormat:@"%@:%@", [postDict objectForKey:@"username"], [postDict objectForKey:@"password"]];
-//    NSData *authData = [authStr dataUsingEncoding:NSASCIIStringEncoding];
-//    
-//    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [self base64EncodingWithLineLength:80 data:authData]];
-//    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
-    
     receivedData = [NSMutableData data];
     
     NSURLResponse *response;
@@ -66,8 +58,52 @@
     NSMutableData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
     
     NSMutableArray *array = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-    
    
+    
+    if (responseData)
+    {
+        NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+        NSLog(@"[HttpAdapter/SyncSendPostDataWithUrl] connection ok - response data : %@", responseString);
+        return array;
+    }
+    return NULL;
+}
+
+- (NSMutableArray *)SyncSendPostImageDataWithUrl:(NSString *)restUrlString file:(NSData *)file filename:(NSString *)filename
+{
+    
+    url = [NSURL URLWithString:restUrlString];
+    request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    /* setBody */
+    NSString *boundary = @"0xKhTmLbOuNdArY";
+    NSString* contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+    [request addValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    NSMutableData* body = [NSMutableData data];
+    NSError *error = nil;
+    
+    if (file) {
+        NSLog(@"[HttpAdapter/SyncSendPostDataWithUrl file] file 이 존재합니다.");
+        [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\r\n", filename] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Type: multipart/form-data\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:file];
+        [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request setHTTPBody:body];
+    
+    
+    NSURLResponse *response;
+    NSError *err;
+    NSMutableData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    
+    NSMutableArray *array = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    
     
     if (responseData)
     {

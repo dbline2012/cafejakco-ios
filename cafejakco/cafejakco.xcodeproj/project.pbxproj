@@ -118,6 +118,7 @@
 /* Begin PBXFileReference section */
 		41120CBA163E8BAF00B4DDA7 /* HelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelperViewController.h; path = ../HelperViewController.h; sourceTree = "<group>"; };
 		41120CBB163E8BAF00B4DDA7 /* HelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelperViewController.m; path = ../HelperViewController.m; sourceTree = "<group>"; };
+		411D64C118136AEB004A8288 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ko; path = ko.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4120A236163E960B00C7C3AB /* bg_helper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_helper.png; sourceTree = "<group>"; };
 		4120A237163E960B00C7C3AB /* bg_helper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_helper@2x.png"; sourceTree = "<group>"; };
 		4120A23E163EB84500C7C3AB /* WriteArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteArticleViewController.h; sourceTree = "<group>"; };
@@ -157,13 +158,11 @@
 		412BA60A163570310036F19B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		412BA60C163570310036F19B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		412BA610163570310036F19B /* cafejakco-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cafejakco-Info.plist"; sourceTree = "<group>"; };
-		412BA612163570310036F19B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		412BA614163570310036F19B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		412BA616163570310036F19B /* cafejakco-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cafejakco-Prefix.pch"; sourceTree = "<group>"; };
 		412BA617163570310036F19B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		412BA618163570310036F19B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		412BA61E163570310036F19B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		412BA621163570310036F19B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		412BA63616357BF40036F19B /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		412BA63716357BF40036F19B /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		412BA63916357D7B0036F19B /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
@@ -217,6 +216,9 @@
 		416F4BCE16391C93000C8FB0 /* story@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "story@2x.png"; sourceTree = "<group>"; };
 		41895D2518123423003EC4C5 /* AppSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSession.h; sourceTree = "<group>"; };
 		41895D2618123423003EC4C5 /* AppSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSession.m; sourceTree = "<group>"; };
+		41A653EA1813A02D00E0AD79 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41A653EB1813A07500E0AD79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41A653EC1813A07B00E0AD79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		41BCF810163D256000F01C43 /* CheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinViewController.h; sourceTree = "<group>"; };
 		41BCF811163D256000F01C43 /* CheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinViewController.m; sourceTree = "<group>"; };
 		41BD07FB180C29B60021B290 /* JakcoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JakcoPin.h; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ko,
 			);
 			mainGroup = 412BA5F9163570310036F19B;
 			productRefGroup = 412BA605163570310036F19B /* Products */;
@@ -699,7 +702,8 @@
 		412BA611163570310036F19B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				412BA612163570310036F19B /* en */,
+				41A653EA1813A02D00E0AD79 /* ko */,
+				41A653EB1813A07500E0AD79 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -707,7 +711,8 @@
 		412BA620163570310036F19B /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				412BA621163570310036F19B /* en */,
+				411D64C118136AEB004A8288 /* ko */,
+				41A653EC1813A07B00E0AD79 /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";

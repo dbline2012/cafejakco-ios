@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cafejakco/LoginViewController.m"
-            timestampString = "403893248.288504"
+            timestampString = "403953320.420201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-actionLogin:"
             landmarkType = "5">
          </BreakpointContent>

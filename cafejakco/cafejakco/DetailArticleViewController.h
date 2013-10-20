@@ -18,6 +18,7 @@
     UILabel *dateLabel;
     UITextView *contentLabel;
     NSInteger pno;
+    BOOL isExistPic;
 }
 
 - (IBAction)actionBack:(id)sender;
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UITextView *contentLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, strong) Article *article;
 

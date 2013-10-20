@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WriteArticleViewController : UITableViewController
+@interface WriteArticleViewController : UITableViewController<UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate>
+{
+    BOOL isExistPic;
+    BOOL isUpView;
+}
 
-@property (strong, nonatomic) IBOutlet UITextField *titleTextField;
-@property (strong, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (strong, nonatomic) IBOutlet UITableViewCell *imageViewCell;
+- (IBAction)actionCamera:(id)sender;
 - (IBAction)actionBack:(id)sender;
 - (IBAction)actionUpload:(id)sender;
 @end

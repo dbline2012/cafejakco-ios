@@ -45,12 +45,12 @@
         [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_home2-568h.png"]]];
     }
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_home.png"] forBarMetrics:UIBarMetricsDefault];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_home.png"] forBarMetrics:UIBarMetricsDefault];
+    
     loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(100.0, 180.0, 120.0, 80.0)];
     [self.view addSubview:loadingView];
     

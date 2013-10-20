@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UITableViewController
+@interface LoginViewController : UITableViewController <UITextFieldDelegate>
+{
+    BOOL isUpView;
+}
 @property (strong, nonatomic) IBOutlet UITextField *idTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pwTextField;
 

@@ -39,11 +39,13 @@
         [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_helper_3-568h.png"]]];
     }
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_helper.png"] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_helper.png"] forBarMetrics:UIBarMetricsDefault];
+    
     self.usernameTextField.text = [AppSession getUsername];
     self.nicknameTextField.text = [AppSession getNickname];
 }

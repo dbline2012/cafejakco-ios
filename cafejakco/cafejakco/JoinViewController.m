@@ -20,6 +20,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        isUpView = FALSE;
     }
     return self;
 }
@@ -27,18 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.view addGestureRecognizer:tap];
-    
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_register.png"] forBarMetrics:UIBarMetricsDefault];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar_register.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +73,8 @@
                                  self.idTextField.text, @"username",
                                  self.pwTextField.text, @"password",
                                  self.nicknameTextField.text, @"nickname",
+                                 @"1", @"group_id",
+                                 @"null", @"sex",
                                  @"null", @"image",
                                  nil];
     
@@ -95,5 +94,64 @@
 {
     NSLog(@"[JoinViewController/handleTap] End editing");
     [self.view endEditing:YES];
+    [self performSelector:@selector(_removeKeyboardNotification)];
 }
+
+#pragma mark -
+#pragma mark UITextField Delegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if (textField.tag == 1) {
+        [self performSelector:@selector(_addKeyboardNotification)];
+    }
+    return YES;
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+}
+
+#pragma mark -
+#pragma mark Keyboard Controller
+
+- (void)keyboardWillAnimate:(NSNotification *)notification
+{
+    CGRect keyboardBounds;
+    [[notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardBounds];
+    NSNumber *duration = [notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [notification.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+    
+    keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:[duration doubleValue]];
+    [UIView setAnimationCurve:[curve intValue]];
+    
+    if([notification name] == UIKeyboardWillShowNotification && !isUpView)
+    {
+        [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y - (keyboardBounds.size.height/2 + 15), self.view.frame.size.width, self.view.frame.size.height)];
+        NSLog(@"%f", keyboardBounds.size.height);
+        isUpView = TRUE;
+    }
+    else if([notification name] == UIKeyboardWillHideNotification && isUpView)
+    {
+        [self.view setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + (keyboardBounds.size.height/2 + 15), self.view.frame.size.width, self.view.frame.size.height)];
+        isUpView = FALSE;
+    }
+    [UIView commitAnimations];
+}
+
+- (void)_addKeyboardNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAnimate:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAnimate:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)_removeKeyboardNotification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 @end
