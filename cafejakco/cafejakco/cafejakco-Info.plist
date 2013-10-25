@@ -23,10 +23,6 @@
 	<string>com.dbline2013.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleLocalizations</key>
-	<array>
-		<string>ko</string>
-	</array>
 	<key>CFBundleName</key>
 	<string>작은커피집</string>
 	<key>CFBundlePackageType</key>

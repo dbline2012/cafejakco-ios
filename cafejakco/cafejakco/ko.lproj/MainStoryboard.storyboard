@@ -523,7 +523,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="guest@cafejakco.co.kr" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jub-Ol-iTI">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="jakco@cafejakco.co.kr" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jub-Ol-iTI">
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -921,6 +921,7 @@
         <image name="checkin.png" width="30" height="30"/>
         <image name="helper.png" width="30" height="30"/>
         <image name="home.png" width="30" height="30"/>
+        <image name="icon_default.png" width="80" height="80"/>
         <image name="icon_default.png" width="80" height="80"/>
         <image name="icon_homepage.png" width="32" height="32"/>
         <image name="icon_map.png" width="32" height="32"/>

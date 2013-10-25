@@ -46,7 +46,6 @@
 		412BA615163570310036F19B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 412BA614163570310036F19B /* main.m */; };
 		412BA619163570310036F19B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 412BA618163570310036F19B /* AppDelegate.m */; };
 		412BA61F163570310036F19B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 412BA61E163570310036F19B /* Default-568h@2x.png */; };
-		412BA622163570310036F19B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 412BA620163570310036F19B /* MainStoryboard.storyboard */; };
 		412BA63816357BF40036F19B /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 412BA63716357BF40036F19B /* Task.m */; };
 		412BA63B16357D7B0036F19B /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412BA63A16357D7B0036F19B /* TaskListViewController.m */; };
 		412BA63E163583B40036F19B /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412BA63D163583B40036F19B /* AddTaskViewController.m */; };
@@ -91,6 +90,7 @@
 		416F4BD116391C93000C8FB0 /* member@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 416F4BCD16391C93000C8FB0 /* member@2x.png */; };
 		416F4BD216391C93000C8FB0 /* story@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 416F4BCE16391C93000C8FB0 /* story@2x.png */; };
 		41895D2718123423003EC4C5 /* AppSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 41895D2618123423003EC4C5 /* AppSession.m */; };
+		418E068B1816B3570037F0C4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 418E06891816B3570037F0C4 /* MainStoryboard.storyboard */; };
 		41BCF812163D256000F01C43 /* CheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BCF811163D256000F01C43 /* CheckinViewController.m */; };
 		41BD07FD180C29B60021B290 /* JakcoPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BD07FC180C29B60021B290 /* JakcoPin.m */; };
 		41D41C321801A33400111496 /* bg_home-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D41C301801A33300111496 /* bg_home-568h.png */; };
@@ -118,7 +118,6 @@
 /* Begin PBXFileReference section */
 		41120CBA163E8BAF00B4DDA7 /* HelperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelperViewController.h; path = ../HelperViewController.h; sourceTree = "<group>"; };
 		41120CBB163E8BAF00B4DDA7 /* HelperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelperViewController.m; path = ../HelperViewController.m; sourceTree = "<group>"; };
-		411D64C118136AEB004A8288 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ko; path = ko.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4120A236163E960B00C7C3AB /* bg_helper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_helper.png; sourceTree = "<group>"; };
 		4120A237163E960B00C7C3AB /* bg_helper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_helper@2x.png"; sourceTree = "<group>"; };
 		4120A23E163EB84500C7C3AB /* WriteArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteArticleViewController.h; sourceTree = "<group>"; };
@@ -216,9 +215,8 @@
 		416F4BCE16391C93000C8FB0 /* story@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "story@2x.png"; sourceTree = "<group>"; };
 		41895D2518123423003EC4C5 /* AppSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSession.h; sourceTree = "<group>"; };
 		41895D2618123423003EC4C5 /* AppSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSession.m; sourceTree = "<group>"; };
+		418E068A1816B3570037F0C4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ko; path = ko.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		41A653EA1813A02D00E0AD79 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		41A653EB1813A07500E0AD79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		41A653EC1813A07B00E0AD79 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		41BCF810163D256000F01C43 /* CheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinViewController.h; sourceTree = "<group>"; };
 		41BCF811163D256000F01C43 /* CheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinViewController.m; sourceTree = "<group>"; };
 		41BD07FB180C29B60021B290 /* JakcoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JakcoPin.h; sourceTree = "<group>"; };
@@ -360,7 +358,7 @@
 		412BA60E163570310036F19B /* cafejakco */ = {
 			isa = PBXGroup;
 			children = (
-				412BA620163570310036F19B /* MainStoryboard.storyboard */,
+				418E06891816B3570037F0C4 /* MainStoryboard.storyboard */,
 				412BA617163570310036F19B /* AppDelegate.h */,
 				412BA618163570310036F19B /* AppDelegate.m */,
 				413B239B163DAA7300B03C10 /* Cell */,
@@ -566,6 +564,7 @@
 			knownRegions = (
 				en,
 				ko,
+				Base,
 			);
 			mainGroup = 412BA5F9163570310036F19B;
 			productRefGroup = 412BA605163570310036F19B /* Products */;
@@ -586,7 +585,6 @@
 				412BA61F163570310036F19B /* Default-568h@2x.png in Resources */,
 				41D41C411801B76F00111496 /* bg_helper_3-568h@2x.png in Resources */,
 				41D41C381801B16800111496 /* bg_home2.png in Resources */,
-				412BA622163570310036F19B /* MainStoryboard.storyboard in Resources */,
 				412BA6451635BB880036F19B /* coffee.png in Resources */,
 				412BA64F1635BD0C0036F19B /* coffee@2x.png in Resources */,
 				41280ED11637C32100BBB1BE /* home.png in Resources */,
@@ -636,6 +634,7 @@
 				413B23D1163E7AAE00B03C10 /* navbar_notice.png in Resources */,
 				413B23D2163E7AAE00B03C10 /* navbar_notice@2x.png in Resources */,
 				41120CC1163E912200B4DDA7 /* cafejakco-Info.plist in Resources */,
+				418E068B1816B3570037F0C4 /* MainStoryboard.storyboard in Resources */,
 				41D6F3EF180933EC001C9351 /* icon_default.png in Resources */,
 				4120A238163E960B00C7C3AB /* bg_helper.png in Resources */,
 				4120A239163E960B00C7C3AB /* bg_helper@2x.png in Resources */,
@@ -703,16 +702,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				41A653EA1813A02D00E0AD79 /* ko */,
-				41A653EB1813A07500E0AD79 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		412BA620163570310036F19B /* MainStoryboard.storyboard */ = {
+		418E06891816B3570037F0C4 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				411D64C118136AEB004A8288 /* ko */,
-				41A653EC1813A07B00E0AD79 /* en */,
+				418E068A1816B3570037F0C4 /* ko */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -820,7 +817,7 @@
 				412BA632163570310036F19B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		412BA633163570310036F19B /* Build configuration list for PBXNativeTarget "cafejakco" */ = {
 			isa = XCConfigurationList;
@@ -829,7 +826,7 @@
 				412BA635163570310036F19B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
